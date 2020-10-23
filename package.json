@@ -1,0 +1,27 @@
+{
+  "name": "reactanimationonscreen",
+  "version": "0.1.0",
+  "description": "NRDBoiler template",
+  "main": "lib/index.js",
+  "types": "lib",
+  "scripts": {
+    "dev": "nodemon src/index.ts",
+    "build": "tsc -p .",
+    "test": "echo 'Error: no test specified' && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/lnardon/NEaDB"
+  },
+  "keywords": [],
+  "author": "github.com/lnardon",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.5",
+    "sucrase": "^3.16.0",
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "@types/node": "^14.11.10"
+  }
+}
