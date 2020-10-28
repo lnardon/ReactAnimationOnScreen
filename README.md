@@ -12,6 +12,16 @@ npm install reactanimationonscreen
 
 Initiate the function inside an useEffect passing the classname of the elements you want to apply the animation, your css classname with the animation to be applied, y offset amount to apply the animation and if you want to use a debounce function to improve performance.
 
+```tsx
+import useOnScreen from "reactanimationonscreen";
+
+useEffect(() => {
+  const sections = useOnScreen(targetClassName: string, animationClassName: string, yOffset : number, useDebounce:boolean);
+}, []);
+```
+
+## Example
+
 ```jsx
 import useOnScreen from "reactanimationonscreen";
 
@@ -19,3 +29,6 @@ useEffect(() => {
   const sections = useOnScreen("sectionDiv", "sectionAnimation", 0, true);
 }, []);
 ```
+
+Any contribuition is Welcome! <br/>
+Lnardon 2020
