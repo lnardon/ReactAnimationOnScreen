@@ -1,13 +1,13 @@
 function debounce(this: void, func: any, wait: number, immediate: boolean) {
-  var timeout: any;
+  let timeout: any;
   return () => {
-    var context = this,
-      args = arguments;
-    var later = function () {
+    let context = this;
+    let args = arguments;
+    let later = () => {
       timeout = null;
       if (!immediate) func.apply(context, args);
     };
-    var callNow = immediate && !timeout;
+    let callNow = immediate && !timeout;
     clearTimeout(timeout);
     timeout = setTimeout(later, wait);
     if (callNow) func.apply(context, args);
