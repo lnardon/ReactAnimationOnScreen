@@ -1,6 +1,6 @@
-function debounce(func: any, wait: number, immediate: boolean) {
+function debounce(this: void, func: any, wait: number, immediate: boolean) {
   var timeout: any;
-  return function () {
+  return () => {
     var context = this,
       args = arguments;
     var later = function () {
