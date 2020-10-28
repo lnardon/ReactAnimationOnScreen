@@ -1,7 +1,7 @@
 {
   "name": "reactanimationonscreen",
-  "version": "0.1.0",
-  "description": "NRDBoiler template",
+  "version": "0.2.0",
+  "description": "React Animation On Screen is a custom hook to track if an element is on screen and apply some CSS to it.",
   "main": "lib/index.js",
   "types": "lib",
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "github.com/lnardon/NEaDB"
+    "url": "github.com/lnardon/ReactAnimationOnScreen"
   },
   "keywords": [],
   "author": "github.com/lnardon",
