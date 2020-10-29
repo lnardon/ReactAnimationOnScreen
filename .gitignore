@@ -2,5 +2,4 @@
 /node_modules/
 /tests
 /lib
-neadb.json
 package-lock.json

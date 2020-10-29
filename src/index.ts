@@ -16,7 +16,7 @@ function debounce(this: void, func: any, wait: number, immediate: boolean) {
 
 function useOnScreen(
   className: string,
-  classNameAnimation: string,
+  animationClassName: string,
   offset = 0,
   useDebounce?: boolean
 ) {
@@ -27,12 +27,12 @@ function useOnScreen(
         debounce(
           (() => {
             elements.forEach((element) => {
-              if (element.classList.contains(classNameAnimation)) {
+              if (element.classList.contains(animationClassName)) {
                 if (
                   element.getBoundingClientRect().top <
                   window.innerHeight - offset
                 ) {
-                  element.classList.add(classNameAnimation);
+                  element.classList.add(animationClassName);
                 }
               }
             });
@@ -42,17 +42,18 @@ function useOnScreen(
         );
       } else {
         elements.forEach((element) => {
-          if (element.classList.contains(classNameAnimation)) {
+          if (element.classList.contains(animationClassName)) {
             if (
               element.getBoundingClientRect().top <
               window.innerHeight - offset
             ) {
-              element.classList.add(classNameAnimation);
+              element.classList.add(animationClassName);
             }
           }
         });
       }
     };
+    return { trackedElements: elements };
   };
 }
 
