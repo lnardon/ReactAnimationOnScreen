@@ -10,13 +10,13 @@ npm install reactanimationonscreen
 
 ## Usage
 
-Initiate the function inside an useEffect passing the classname of the elements you want to apply the animation, your css classname with the animation to be applied, y offset amount to apply the animation and if you want to use a debounce function to improve performance.
+Initiate the function inside an useEffect passing an array of classnames you want to apply the animation, an array of css classes with the animations to be applied, the y offset amount to apply the animation and if you want to use a debounce function to improve performance.
 
 ```tsx
 import useOnScreen from "reactanimationonscreen";
 
 useEffect(() => {
-  const sections = useOnScreen(targetClassName: string, animationClassName: string, yOffset : number, useDebounce:boolean);
+  const sections = useOnScreen(targetClassNames: string[], animationClassNames: string[], yOffset : number(optional), useDebounce:boolean(optional));
 }, []);
 ```
 
@@ -26,9 +26,14 @@ useEffect(() => {
 import useOnScreen from "reactanimationonscreen";
 
 useEffect(() => {
-  const sections = useOnScreen("sectionDiv", "sectionAnimation", 0, true);
+  const sections = useOnScreen(
+    ["subtitle", "paragraph"],
+    ["subtitleAnimation", "paragraphAnimation"],
+    0,
+    true
+  );
 }, []);
 ```
 
 Any contribuition is Welcome! <br/>
-Lnardon 2020
+MIT Lnardon 2020
