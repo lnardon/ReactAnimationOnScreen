@@ -18,7 +18,7 @@ function useOnScreen(
   className: string,
   animationClassName: string,
   offset = 0,
-  useDebounce?: boolean
+  useDebounce = true
 ) {
   window.onload = () => {
     let elements = [...document.getElementsByClassName(className)];
@@ -27,7 +27,7 @@ function useOnScreen(
         debounce(
           (() => {
             elements.forEach((element) => {
-              if (element.classList.contains(animationClassName)) {
+              if (!element.classList.contains(animationClassName)) {
                 if (
                   element.getBoundingClientRect().top <
                   window.innerHeight - offset
@@ -42,7 +42,7 @@ function useOnScreen(
         );
       } else {
         elements.forEach((element) => {
-          if (element.classList.contains(animationClassName)) {
+          if (!element.classList.contains(animationClassName)) {
             if (
               element.getBoundingClientRect().top <
               window.innerHeight - offset
@@ -53,7 +53,6 @@ function useOnScreen(
         });
       }
     };
-    return { trackedElements: elements };
   };
 }
 
