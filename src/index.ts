@@ -15,42 +15,44 @@ function debounce(this: void, func: any, wait: number, immediate: boolean) {
 }
 
 function useOnScreen(
-  className: string,
-  animationClassName: string,
+  classNames: string[],
+  animationClassNames: string[],
   offset = 0,
   useDebounce = true
 ) {
   window.onload = () => {
-    let elements = [...document.getElementsByClassName(className)];
     window.onscroll = (e: Event) => {
-      if (useDebounce) {
-        debounce(
-          (() => {
-            elements.forEach((element) => {
-              if (!element.classList.contains(animationClassName)) {
-                if (
-                  element.getBoundingClientRect().top <
-                  window.innerHeight - offset
-                ) {
-                  element.classList.add(animationClassName);
+      for (let i = 0; i < classNames.length; i++) {
+        let elements = [...document.getElementsByClassName(classNames[i])];
+        if (useDebounce) {
+          debounce(
+            (() => {
+              elements.forEach((element) => {
+                if (!element.classList.contains(animationClassNames[i])) {
+                  if (
+                    element.getBoundingClientRect().top <
+                    window.innerHeight - offset
+                  ) {
+                    element.classList.add(animationClassNames[i]);
+                  }
                 }
+              });
+            })(),
+            500,
+            false
+          );
+        } else {
+          elements.forEach((element) => {
+            if (!element.classList.contains(animationClassNames[i])) {
+              if (
+                element.getBoundingClientRect().top <
+                window.innerHeight - offset
+              ) {
+                element.classList.add(animationClassNames[i]);
               }
-            });
-          })(),
-          500,
-          false
-        );
-      } else {
-        elements.forEach((element) => {
-          if (!element.classList.contains(animationClassName)) {
-            if (
-              element.getBoundingClientRect().top <
-              window.innerHeight - offset
-            ) {
-              element.classList.add(animationClassName);
             }
-          }
-        });
+          });
+        }
       }
     };
   };
