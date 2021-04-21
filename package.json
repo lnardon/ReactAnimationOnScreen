@@ -1,6 +1,6 @@
 {
   "name": "reactanimationonscreen",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "React Animation On Screen is a custom hook to track if an element is on screen and apply some animation to it.",
   "main": "lib/index.js",
   "types": "lib",

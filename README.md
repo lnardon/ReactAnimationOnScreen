@@ -35,7 +35,7 @@ useEffect(() => {
 }, []);
 ```
 
-## Extra Feature
+## Extra Feature 1
 
 By default the animation is applied when the target starts to appear on the bottom of the screen but if you want the animation to be applied later you can pass a third argument to the function call.
 
@@ -49,4 +49,14 @@ useEffect(() => {
 }, []);
 ```
 
-MIT Lnardon 2020
+## Extra Feature 2
+
+By default the animation is applied only the first time the target appears on the viewport, but if you want the animation to be applied everytime the target enters the viewport pass a boolean true value as the fourth argument to the function call.
+
+```jsx
+import useOnScreen from "reactanimationonscreen";
+
+useEffect(() => {
+  const sections = useOnScreen(["title"], ["titleAnimation"], 0, true);
+}, []);
+```
