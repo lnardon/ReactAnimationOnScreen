@@ -57,6 +57,6 @@ By default the animation is applied only the first time the target appears on th
 import useOnScreen from "reactanimationonscreen";
 
 useEffect(() => {
-  const sections = useOnScreen(["title"], ["titleAnimation"], 0, true);
+  const sections = useOnScreen(["title"], ["titleAnimation"], 250, true);
 }, []);
 ```
